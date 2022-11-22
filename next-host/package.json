@@ -4,10 +4,10 @@
   "scripts": {
     "next:dev": "next dev",
     "next:build": "next build",
-    "build": "NODE_ENV=production dotenv -e .remoteapps.env -- node scripts/prebuild.js",
+    "build": "cross-env NODE_ENV=production dotenv -e .remoteapps.env -- node scripts/prebuild.js",
     "next:start": "next start",
-    "dev": "NODE_ENV=development dotenv -e .remoteapps.env -- node scripts/custom-server.js",
-    "start": "NODE_ENV=production dotenv -e .remoteapps.env -- node scripts/custom-server.js",
+    "dev": "cross-env NODE_ENV=development dotenv -e .remoteapps.env -- node scripts/custom-server.js",
+    "start": "cross-env NODE_ENV=production dotenv -e .remoteapps.env -- node scripts/custom-server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "webpack": "5.66.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@types/hoist-non-react-statics": "^3.3.1",
     "@types/node": "17.0.9",
     "@types/react": "17.0.38",

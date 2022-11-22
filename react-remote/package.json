@@ -9,8 +9,8 @@
     "dev": "webpack serve --config webpack.dev.js",
     "start": "live-server ./dist/ --port=3002 --no-browser",
     "server:start": "node server-dist/main.js",
-    "server:dev": "NODE_ENV=development node server/index.js",
-    "server:prod": "NODE_ENV=production node server/index.js",
+    "server:dev": "cross-env NODE_ENV=development node server/index.js",
+    "server:prod": "cross-env NODE_ENV=production node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -29,6 +29,7 @@
     "react-i18next": "^11.15.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@babel/core": "7.15.0",
     "@babel/preset-env": "7.15.0",
     "@babel/preset-react": "7.14.5",

@@ -6,9 +6,9 @@
   "author": "Metin Arslanturk",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production node src/build.js",
+    "build": "cross-env NODE_ENV=production node src/build.js",
     "start": "live-server dist --port=3001 --cors --no-browser",
-    "dev": "NODE_ENV=development concurrently \"nodemon --watch public src/build.js\" \"live-server .i18dev --port=3001 --cors --no-browser\""
+    "dev": "cross-env NODE_ENV=development concurrently \"nodemon --watch public src/build.js\" \"live-server .i18dev --port=3001 --cors --no-browser\""
 
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "short-uuid": "^4.2.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "live-server": "^1.2.1",
     "nodemon": "^2.0.15",
     "concurrently": "^7.0.0"
